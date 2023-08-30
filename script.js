@@ -3,7 +3,7 @@ const addEventListeners = () => {
   squares.forEach(square =>
     square.addEventListener(
       'mouseover',
-      () => (square.style.backgroundColor = 'black')
+      () => (square.style.backgroundColor = generateRandomColor())
     )
   )
 }
@@ -62,3 +62,14 @@ const getNewGridSize = () => {
 
 const resizeGrid = document.querySelector('.resize-grid')
 resizeGrid.addEventListener('click', getNewGridSize)
+
+const generateRandomColor = () => {
+  const generateNumber = () => {
+    return Math.floor(Math.random() * 256)
+  }
+  const rValue = generateNumber()
+  const gValue = generateNumber()
+  const bValue = generateNumber()
+
+  return `rgb(${rValue}, ${gValue}, ${bValue})`
+}
