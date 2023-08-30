@@ -27,3 +27,18 @@ squares.forEach(square =>
     () => (square.style.backgroundColor = 'black')
   )
 )
+
+const resetGrid = () => {
+  const squares = document.querySelectorAll('.square')
+  squares.forEach(square => (square.style.backgroundColor = 'white'))
+}
+
+const getNewGridSize = () => {
+  console.log('test')
+  const sides = prompt('Enter number of squares per side of new grid')
+  console.log(sides)
+  resetGrid()
+}
+
+const resizeGrid = document.querySelector('.resize-grid')
+resizeGrid.addEventListener('click', getNewGridSize)
